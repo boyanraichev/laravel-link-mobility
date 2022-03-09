@@ -1,0 +1,38 @@
+{
+    "name": "boyo/laravel-link-mobility",
+    "description": "Laravel notifications with Link Mobility",
+    "keywords": ["laravel", "notifications", "sms", "link-mobility"],
+    "homepage": "https://github.com/boyanraichev/laravel-link-mobility",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boyan Raichev",
+            "email": "myself@boyanr.com"
+        },
+        {
+          "name": "Nikolay Nikolov",
+          "email": "nikolay@healee.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "laravel/framework": ">=6.0",
+        "boyo/bulglish": "*"
+    },
+    "autoload": {
+		"psr-4": {
+			"Boyo\\LinkMobility\\": "src/"
+    	}
+	},
+    "extra": {
+	    "laravel": {
+	        "providers": [
+	            "Boyo\\LinkMobility\\LinkMobilityServiceProvider"
+	        ],
+	        "aliases": {
+		        "LinkMobilityChannel": "Boyo\\LinkMobility\\LinkMobilityChannel"
+	        }
+	    }
+    }
+
+}
