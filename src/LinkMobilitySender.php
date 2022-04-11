@@ -84,11 +84,18 @@ class LinkMobilitySender
                 }
 			}
 			
+		} catch(CouldNotSendMessage $e) {
+
+			throw $e;
+
 		} catch(\Exception $e) {
-			
-			Log::channel($this->log_channel)->info('Could not send LinkMobility message ('.$e->getMessage().')');
-			
-		}
+
+            Log::channel($this->log_channel)->info('Could not send LinkMobility message ('.$e->getMessage().')');
+
+            throw CouldNotSendMessage::unknownError();
+
+        }
+
 		
 	}
 	

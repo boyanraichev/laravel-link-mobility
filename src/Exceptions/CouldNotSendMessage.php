@@ -62,5 +62,14 @@ class CouldNotSendMessage extends \Exception
     {
         return new static("Could not return status code 200 with call_id {$call_id}");
     }
-    
+
+    /**
+     * Thrown with custom error message
+     *
+     * @return static
+     */
+    public static function unknownError()
+    {
+        return new static('Could not send the message.');
+    }
 }
