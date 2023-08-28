@@ -76,7 +76,7 @@ class LinkMobilitySender
                 $response = Http::withHeaders($this->headers)->post($apiUrl, $request)->json();
 
                 if($this->log) {
-                    Log::channel($this->log_channel)->info("LinkMobility message with call_id {$call_id}",$response);
+                    Log::channel($this->log_channel)->info("LinkMobility message with call_id {$call_id}",$response ?? []);
                 }
 
                 if (!isset($response['meta']) || $response['meta']['code'] != 200) {
