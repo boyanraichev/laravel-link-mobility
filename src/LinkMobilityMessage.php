@@ -79,6 +79,13 @@ class LinkMobilityMessage
     public $prefix = false;
     
     /**
+     * Limit length to 1 sms
+     *
+     * @var string
+     */
+    public $limitLength = false;
+    
+    /**
      * @param  string $id
      */
     public function __construct($id='')
