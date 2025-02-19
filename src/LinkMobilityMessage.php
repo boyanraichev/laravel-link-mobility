@@ -2,11 +2,12 @@
 
 namespace Boyo\LinkMobility;
 
+use AllowDynamicProperties;
 use Illuminate\Notifications\Notification;
 use Boyo\LinkMobility\Exceptions\CouldNotSendMessage;
 use Bulglish;
 
-class LinkMobilityMessage
+#[AllowDynamicProperties] class LinkMobilityMessage
 {
 	/**
      * The phone number to send the message to
