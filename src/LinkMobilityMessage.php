@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Boyo\LinkMobility\Exceptions\CouldNotSendMessage;
 use Bulglish;
 
-#[AllowDynamicProperties] class LinkMobilityMessage
+class LinkMobilityMessage
 {
 	/**
      * The phone number to send the message to
@@ -78,13 +78,20 @@ use Bulglish;
      * @var string
      */
     public $prefix = false;
-    
+
     /**
      * Limit length to 1 sms
      *
      * @var string
      */
     public $limitLength = false;
+
+    /**
+     * Bulglish config
+     *
+     * @var string
+     */
+    public $bulglish = false;
     
     /**
      * @param  string $id
