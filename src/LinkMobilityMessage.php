@@ -2,7 +2,6 @@
 
 namespace Boyo\LinkMobility;
 
-use AllowDynamicProperties;
 use Illuminate\Notifications\Notification;
 use Boyo\LinkMobility\Exceptions\CouldNotSendMessage;
 use Bulglish;
