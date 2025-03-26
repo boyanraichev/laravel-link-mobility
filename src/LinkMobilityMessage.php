@@ -86,6 +86,13 @@ class LinkMobilityMessage
     public $limitLength = false;
     
     /**
+     * Set message priority
+     *
+     * @var string
+     */
+    public $priority = null;
+    
+    /**
      * @param  string $id
      */
     public function __construct($id='')
@@ -120,7 +127,11 @@ class LinkMobilityMessage
 		if ($this->limitLength) {
 		    $json['max_sms_size'] = 1;
         }
-
+        
+        if ($this->priority) {
+            $json['priority'] = $this->priority;
+        }
+        
 	    switch($this->channel) {
 		    case 'sms':
 				
@@ -234,6 +245,11 @@ class LinkMobilityMessage
         
         return $this;
         
+    }
+    
+    public function priority(string $priority) {
+        
+        $this->priority = $priority;
     }
     
     /**
