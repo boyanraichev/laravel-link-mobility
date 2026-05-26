@@ -47,6 +47,9 @@ class LinkMobilityMessage
 
     // Limit length to 1 sms
     public $limitLength = false;
+    
+    // convert cyrillic to latin
+    public $bulglish = false;
 
     // Set message priority
     public $priority = null;
