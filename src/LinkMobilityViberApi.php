@@ -45,12 +45,14 @@ class LinkMobilityViberApi
             'sc' => $this->sc,
         ]);
 
-        if (isset($response['templates'])) {
-            return $response['templates'];
+        $data = $response['data'] ?? $response;
+
+        if (isset($data['templates'])) {
+            return $data['templates'];
         }
 
-        if (isset($response['template']) && isset($response['template']['template_id'])) {
-            return [$response['template']];
+        if (isset($data['template']) && isset($data['template']['template_id'])) {
+            return [$data['template']];
         }
 
         return [];
