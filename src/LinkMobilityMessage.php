@@ -99,7 +99,7 @@ class LinkMobilityMessage
                     $json['templateId'] = $this->viberTemplateId;
                     $json['templateLang'] = $this->viberTemplateLang;
                     if (!empty($this->viberTemplateParams)) {
-                        $json['templateParams'] = $this->viberTemplateParams;
+                        $json['templateParams'] = array_map([$this, 'cutParam'], $this->viberTemplateParams);
                     }
                 } else {
                     if (empty($this->messageViber)) {
@@ -215,5 +215,15 @@ class LinkMobilityMessage
         }
 
         return $text;
+    }
+
+    // Viber template params have a 100 character limit each
+    private function cutParam($value)
+    {
+        if (is_string($value) && mb_strlen($value) > 100) {
+            $value = mb_substr($value, 0, 97) . '...';
+        }
+
+        return $value;
     }
 }
